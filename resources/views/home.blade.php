@@ -1,7 +1,7 @@
 @extends('layouts.site')
-@section('titulo','Home')
+@section('titulo','Página Inicial')
 @section('conteudo')
-<div class="bebidas-tela" style=" background-image: url('../img/bg.jpg'); background-size: cover; background-position:center center;">
+<div class="bebidas-tela" style=" background-image: url('../img/bg.jpg'); background-size: cover; background-position:center center; ">
 
     <div class="texto-informativo">
         <h1>Starbucks&reg<br>
@@ -18,11 +18,14 @@
     <!-- <img src="/img/bg.jpg" alt="" srcset=""> -->
 </div>
 <div class="grid-info">
-    <div class="grid-item" class="grid-texto">
-        <h2>Quatro Bebidas, Um milhão de Razões</h2>
-        <p><i>"Apenas ame a si mesmo"-Lady gaga</i></p>
-        <p>Lady Gaga e a Starbucks compartilham uma missão: construir um mundo mais amável e corajoso. Por meio da Fundação Born This Way, Lady Gaga inspirou seus fãs a abraçar a bondade em suas comunidades - online e no mundo todo. Com a sua ajuda, podemos capacitar os jovens a espalhar mais gentileza.</p>
-        <button>Saiba Mais</button>
+    <div class="grid-item">
+        <div class="grid-texto">
+                <h2>Quatro Bebidas, Um milhão de Razões</h2>
+                <p><i>"Apenas ame a si mesmo"-Lady gaga</i></p>
+                <p>Lady Gaga e a Starbucks compartilham uma missão: construir um mundo mais amável e corajoso. Por meio da Fundação Born This Way, Lady Gaga inspirou seus fãs a abraçar a bondade em suas comunidades - online e no mundo todo. Com a sua ajuda, podemos capacitar os jovens a espalhar mais gentileza.</p>
+                <button>Saiba Mais</button>
+        </div>
+        
     </div>
     <div class="grid-item">
         <img src="/img/f2.jpg" alt="" srcset="">
@@ -33,33 +36,39 @@
     <div class="grid-item">
         <img src="/img/f3.jpg" alt="" srcset="">
     </div>
-    <div class="grid-item" class="grid-texto">
-        <h2>Apresentando Vanilla Sweet Cream Cold Brew- Doce, Cremoso, Frio, Ousado.</h2>
-        <p> 
-            Pouco antes de servir, nosso café Starbucks&reg Cold Brew de
-            mistura lenta e personalizada é coberto com um delicado
-            creme de baunilha doce feito em casa que se espalha por
-            toda à xícara.
-        </p>
-        <button>Saiba Mais</button>
+    <div class="grid-item">
+        <div class="grid-texto">
+            <h2>Apresentando Vanilla Sweet Cream Cold Brew- Doce, Cremoso, Frio, Ousado.</h2>
+            <p> 
+                Pouco antes de servir, nosso café Starbucks&reg Cold Brew de
+                mistura lenta e personalizada é coberto com um delicado
+                creme de baunilha doce feito em casa que se espalha por
+                toda à xícara.
+            </p>
+            <button>Saiba Mais</button>
+        </div>
+        
     </div>
      <div class="grid-item">
         <img src="/img/f4.jpg" alt="" srcset="">
     </div>
-    <div class="grid-item" class="grid-texto" style="background-image: url('../img/bg2.jpg'); background-size:cover;">
-        <h2>Chegou O Novo Ultra Caramel Frappuccino!</h2>
-        <p> 
-            Parabéns por fazer isso!Isso exige caramelo. Muitos disso. Com creme de leite fresco. Chegou o novo Ultra Caramel Frappuccino!
+    <div class="grid-item" style="background-image: url('../img/bg2.jpg'); background-size:cover;">
+        <div class="grid-texto">
+            <h2>Chegou O Novo Ultra Caramel Frappuccino!</h2>
+            <p> 
+                Parabéns por fazer isso!Isso exige caramelo. Muitos disso. Com creme de leite fresco. Chegou o novo Ultra Caramel Frappuccino!
 
-        </p>
-        <button>Saiba Mais</button>
+            </p>
+            <button>Saiba Mais</button>
+        </div>
+       
 
        
     </div>
        
     <div class="grid-item">
         <img src="/img/f5.jpg" alt="" srcset="">
-        </div>
+    </div>
     
     
 </div>

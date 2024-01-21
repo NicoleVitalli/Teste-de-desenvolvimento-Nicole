@@ -1,5 +1,5 @@
 @section('footer')
-<p>FUNCIONA CARALHO</p>
+<script type="javascript" src="/js/menu.js"></script>
 @endsection
 </body>
 

@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/home',
+['as' =>'home',
+'uses'=>'App\Http\Controllers\MenuController@home']);
+
+Route::get('/cad',
+['as' =>'cadastro',
+'uses'=>'App\Http\Controllers\MenuController@cadastro']);
+
+Route::get('/bebidas',
+['as' =>'bebidas',
+'uses'=>'App\Http\Controllers\MenuController@bebidas']);
