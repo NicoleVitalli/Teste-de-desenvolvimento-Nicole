@@ -27,4 +27,4 @@ Route::get('/cad',
 
 Route::get('/bebidas',
 ['as' =>'bebidas',
-'uses'=>'App\Http\Controllers\MenuController@bebidas']);
+'uses'=>'App\Http\Controllers\BebidaController@bebidas']);

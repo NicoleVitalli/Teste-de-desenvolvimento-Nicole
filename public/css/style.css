@@ -74,8 +74,9 @@ nav.menu-bar{
     background-color: #006341;
      
 }
-nav.menu-bar .expandir{
+nav.menu-bar.expandir{
     width: 400px;
+    transition: 1s;
     
 }
 .menu-bar ul{
@@ -269,4 +270,57 @@ li.item-menu a{
 .btn-enviar button:hover{
     background-color: #003f29;
     transition:0.3s;
+}
+
+/* estilização da tela bebidas */
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+.table-card{
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+
+}
+
+ .card{
+  
+    border:solid 1px rgb(83, 83, 83);
+    color: rgb(83, 83, 83);
+    width: 300px;
+    
+}
+.img-card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.img-card img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+.text-card{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+.btn-card{
+    display: flex;
+}
+.btn-card a{
+    color: #fff;
+    background-color: #006341;
+}
+.btn-card a:hover{
+    background-color: #003f29;
 }

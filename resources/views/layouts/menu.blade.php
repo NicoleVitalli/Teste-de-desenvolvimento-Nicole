@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -50,3 +49,21 @@
         
     </div>
 
+<script>
+    
+
+    var btn_exp = document.querySelector('#btn-expandir');
+    var btn_esc = document.querySelector('#btn-esconder');
+    var menu_lat=document.querySelector('#menu-bar');
+
+    btn_exp.addEventListener('click', function() {
+        // O PROBLEMA É COM A NAV BAR!!!!!!!!!!!!!!!!!
+        menu_lat.classList.add('expandir');
+    });
+
+    btn_esc.addEventListener('click', function() {
+        menu_lat.classList.remove('expandir');
+    });
+
+
+</script>
