@@ -43,7 +43,7 @@
                 </li>
 
                 <li class="item-menu">
-                    <a href="{{ route('listagem') }}">
+                    <a href="{{ route('pesquisa') }}">
                         <span>Ver Bebidas</span>
                     </a>
                 </li>

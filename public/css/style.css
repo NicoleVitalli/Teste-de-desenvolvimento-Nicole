@@ -72,11 +72,13 @@ nav.menu-bar{
     overflow: hidden;
     height: 100%;
     background-color: #006341;
+    transition: 1s;
      
 }
 nav.menu-bar.expandir{
     width: 400px;
     transition: 1s;
+    z-index: 1;
     
 }
 .menu-bar ul{
@@ -113,7 +115,15 @@ li.item-menu a{
    
     
 }
-
+/* estilização do footer */
+.footer{
+    position: sticky;
+    bottom: 0 !important;
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    background-color:rgb(53, 53, 53);
+}
 
 /* estilização da home */
 .bebidas-tela{
@@ -186,7 +196,7 @@ li.item-menu a{
     width:100%;
    
 }
-.grid-item button{
+.btn-sabermais button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,10 +208,11 @@ li.item-menu a{
     color: rgb(83, 83, 83);
     
 }
-.grid-item button:hover{
+.btn-sabermais button:hover{
     background-color:rgb(83, 83, 83);
     color: #fff;
     transition: 0.3s;
+    cursor:pointer;
 }
 .grid-texto{
     margin: 2rem;
@@ -229,11 +240,64 @@ li.item-menu a{
 
 
 }
-.texto-copos img{
-    max-width: 80%;
+.texto-copos{
+    display: block;
+    padding: 50px;
+    width: 100%;
+    height: 500px;
+    background-color:#E9EAEF;
+}
+.texto-copos .texto{
+    text-align: left;
+    width: 400px;
+    line-height: 2.5rem;
+}
+.img-final{
+    display: block;
+    text-align: center;
+    background-color: #E9EAEF;
+    width: 100%;
+    
+}
+.img-final img{
+    height: 400px;
 }
 
+.modal{
+    display: none;
+    background-color: #006341;
+    position: fixed;
+    z-index: 999;
+    height: 400px;
+    width: 700px;
+    padding:10px;
+    margin: auto;
 
+}
+.modal .mostrar{
+    display: block;
+}
+.modal-itens{
+    display: block;
+    width: 100%;
+}
+.modal-texto{
+    text-align: left;
+    color: #fff;
+}
+.modal-itens button{
+    text-align: center;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+.modal-itens button:hover{
+    background-color:#fff;
+    color: #006341;
+    transition: 0.5s;
+    cursor: pointer;
+}
 /* estilização do cadastro */
 .container{
     display: flex;
@@ -299,54 +363,52 @@ li.item-menu a{
 }
 
 /* estilização da tela bebidas */
-
-.wrapper{
+.titulo-bebidas{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.container-table{
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-}
-.table-card{
-    display: flexbox;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    align-content: center;
 
 }
+.card{
+    background-color: #fff;
+    height: 320px;
+    width: 250px;
+    margin: 30px;
+    box-shadow: 10px 35px 16px 0px rgba(81,84,99,0.63);
+    transition:0.5s;
 
- .card{
-  
-    border:solid 1px rgb(83, 83, 83);
-    color: rgb(83, 83, 83);
-    width: 300px;
-    
+}
+.card:hover{
+    box-shadow: 20px 50px 16px 0px rgba(81,84,99,0.63);
+    transform: translateY(-10%);
+    transition:0.5s;
 }
 .img-card{
-    display: flex;
-    justify-content: center;
     width: 100%;
+    background-color: aqua;
+    height: 150px;
+    margin-bottom: 30px;
 }
-.img-card img{
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-}
-.text-card{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
+.texto-card{
+    display: block;
+    text-align:center;
 }
 .btn-card{
-    display: flex;
+    margin-top: 50px;
 }
 .btn-card a{
-    color: #fff;
     background-color: #006341;
+    color: #fff;
+    padding: 15px 30px;
+  
+
 }
 .btn-card a:hover{
     background-color: #003f29;
+    transition: 0.5s;
+
 }

@@ -15,9 +15,9 @@ class BebidaController extends Controller
         return view('home', compact('registros'));
     }
 
-    public function bebidasPesquisa(Request $request)
+    public function bebidasPesquisa()
     {
-        $search = $request->input('search');
+        $search = request('search');
 
         if($search) {
             $bebidas = Bebida::where([
@@ -48,6 +48,36 @@ class BebidaController extends Controller
             $dados['imagem']= $dir."/".$nomeImagem;
         }
         Bebida::create($dados);
-        return redirect()->route('home.bebidas');
+        return redirect()->route('bebidas');
     }
+
+    public function editar($id){
+        $registro = Bebida::find($id);
+        return view('editar',compact('registro'));
+    }
+
+    public function atualizar(Request $req, $id){
+        $dados = $req->all();
+
+        // tratamento de imagem
+        if($req-> hasfile('imagem')){
+            // pega a imagem do campo do form
+            $imagem = $req->file('imagem');
+            $num = rand(1111,9999);
+            $dir = "img/bebidas/";
+            $ex= $imagem->guessClientExtension();
+            $nomeImagem= "imagem_".$num.".".$ex;
+            // move a imagem para o diretório especificado
+            $imagem->move($dir,$nomeImagem);
+            // salva a imagem no banco de dados
+            $dados['imagem']= $dir."/".$nomeImagem;
+        }
+        Bebida::find($id)->update($dados);
+        return redirect()->route('pesquisa');
+    }
+    public function deletar($id){
+        Bebida::find($id)->delete();
+        return redirect()->route('pesquisa');
+    }
+
 }

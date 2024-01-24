@@ -11,9 +11,6 @@ class MenuController extends Controller
     {
         return view('cad');
     }
-    public function bebidas()
-    {
-        return view('bebidas');
-    }
+  
  
 }

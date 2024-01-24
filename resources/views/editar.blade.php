@@ -8,8 +8,10 @@
         
        
         <div class="form">
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{route('atualizar',$registro->id)}}" method="post" enctype="multipart/form-data">
+                
                 {{ csrf_field() }}
+                <input type="hidden" name="_method" value="put">
                 <div class="form-header">
                     <h2>Editar Bebida</h2>
                 </div>
