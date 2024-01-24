@@ -10,7 +10,18 @@
         <p>Encontraremos você em sua caixa de entrada. Ofertas de bebidas estão a caminho</p>
 
         <div class="bebidas-cadastradas">
-                Bebida bebida bebida
+            <!-- limitar futuramente só para 3 registros -->
+            @foreach($registros as $registro)
+                <div class="bebida">
+                    <div class="img-bebida">
+                        <img src="{{ asset($registro->imagem) }}">
+                    </div>
+                    <div class="nome-bebida">
+                        <p><b>{{ $registro->nome }}</b></p>
+                    </div>
+                   
+                </div>
+            @endforeach
         </div>
     </div>
     

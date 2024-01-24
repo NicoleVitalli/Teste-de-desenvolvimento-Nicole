@@ -134,9 +134,35 @@ li.item-menu a{
     
 }
 .bebidas-cadastradas{
-    background-color: rgb(107, 249, 94);
+   display: flex;
+   flex-wrap: wrap;
+   width: 400px;
+   align-content: center;
+   justify-content: space-evenly;
+   margin-top: 40px;
+
+}
+.bebida{
+    display:block;
+    text-align: center;
+    width: 33%;
+   padding: 4px;
+}
+.img-bebida{
+    border-radius: 50%;
+    border: 4px solid #006341;
+    width: 100%;
+}
+.img-bebida img{
+   clip-path: circle();
+   width: 100%;
    
 }
+.img-bebida:hover{
+   opacity: 50%;
+   cursor: pointer;
+   /* transition: 0.5s; */
+ }
 .grid-info{
     display: grid;
     grid-template-columns: repeat(2, 3fr);

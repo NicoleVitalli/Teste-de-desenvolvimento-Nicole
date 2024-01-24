@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function home()
-    {
-        return view('home');
-    }
     public function cadastro()
     {
         return view('cad');
+    }
+    public function bebidas()
+    {
+        return view('bebidas');
     }
  
 }

@@ -10,10 +10,15 @@
     <div class="menu">
         <img src="/img/logo.png" alt="starbucks logo" srcset="" class="logo">
 
-        <div class="busca">
-            <input type="text" placeholder="Search"/>
-            <img src="/img/loupe.png" alt="" srcset="">
-        </div>
+        <form action="{{ route('pesquisa') }}" method="get">
+        {{ csrf_field() }}
+            <div class="busca">
+                <input type="text" placeholder="Search" name="search" id="search"/>
+                <button  type="submit"><img src="/img/loupe.png" alt="" srcset=""></button>
+             
+            </div>
+        </form>
+       
         
         <div class="btn-expandir">
             <img src="/img/menu.png" alt="" srcset="" id="btn-expandir">
@@ -26,19 +31,19 @@
             </div>
             <ul>
                 <li class="item-menu">
-                    <a href="{{route('home')}}">
+                    <a href="{{ route('bebidas') }}">
                         <span>Página Inicial</span>
                     </a>
                 </li>
             
                 <li class="item-menu">
-                    <a href="{{route('cadastro')}}">
+                    <a href="{{ route('cadastro') }}">
                         <span>Cadastro de Bebidas</span>
                     </a>
                 </li>
 
                 <li class="item-menu">
-                    <a href="{{route('bebidas')}}">
+                    <a href="{{ route('listagem') }}">
                         <span>Ver Bebidas</span>
                     </a>
                 </li>

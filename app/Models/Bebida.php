@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bebida extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'nome',
+        'imagem'
+      
+    ];
 }

@@ -8,18 +8,18 @@
 SE CHEGOU PELO MENU, MOSTRARÁ TODAS -->
 <div class="wrapper">
 <div class="table-card">
-    @foreach($registro as $registro)
+    @foreach($bebidas as $bebida)
             <div class="card">
                 <div class="img-card">
-                <img src="{{ asset($registro->imagem) }}" alt="">  
+                <img src="{{ asset($bebida->imagem) }}" alt="">  
                 </div>
 
                 <div class="texto-card">
-                    <H3>{{ $registro->nome }}</H3>
+                    <H3>{{ $bebida->nome }}</H3>
                     <div class="btn-card">
                         <!-- DEFINIR AS ROTAS AQUI -->
-                        <a href="http://">Alterar</a>
-                        <a href="http://">Excluir</a>
+                        <a href="{{route('editar', ['id' => $bebida->id])}}">Editar</a>
+                        <a href="{{route('deletar', ['id' => $bebida->id])}}">Excluir</a>
                     </div>
                 
             </div>
