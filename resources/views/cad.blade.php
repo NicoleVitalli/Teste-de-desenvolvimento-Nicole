@@ -3,8 +3,8 @@
 @section('conteudo')
 
     <div class="container">
-        <div class="form-img">
-            <img src="/img/cad-img.png" alt="" srcset="">
+        <div class="form-img" style="background-image: url('../img/cad-img.png'); background-size: cover; background-position:center center;">
+     
         </div>
         
        

@@ -9,7 +9,7 @@
 <body>
     <div class="menu">
         <img src="/img/logo.png" alt="starbucks logo" srcset="" class="logo">
-
+        <div class="right">
         <form action="{{ route('pesquisa') }}" method="get">
         {{ csrf_field() }}
             <div class="busca">
@@ -23,7 +23,7 @@
         <div class="btn-expandir">
             <img src="/img/menu.png" alt="" srcset="" id="btn-expandir">
         </div>
-        
+        </div>
         <!-- MENU LATERAL -->
         <nav class="menu-bar expandir" id="menu-bar">
             <div class="btn-expandir">

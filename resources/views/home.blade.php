@@ -1,6 +1,7 @@
 @extends('layouts.site')
 @section('titulo','Página Inicial')
 @section('conteudo')
+
 <div class="bebidas-tela" style=" background-image: url('../img/bg.jpg'); background-size: cover; background-position:center center; ">
 
     <div class="texto-informativo">
@@ -34,13 +35,15 @@
                 <h2>Quatro Bebidas, Um milhão de Razões</h2>
                 <p><i>"Apenas ame a si mesmo"-Lady gaga</i></p>
                 <p>Lady Gaga e a Starbucks compartilham uma missão: construir um mundo mais amável e corajoso. Por meio da Fundação Born This Way, Lady Gaga inspirou seus fãs a abraçar a bondade em suas comunidades - online e no mundo todo. Com a sua ajuda, podemos capacitar os jovens a espalhar mais gentileza.</p>
-                <button class="abrir" id="abrir-1" onclick="abrirModal1()">Saiba Mais</button>
+                <button class="abrir" id="abrir-1">Saiba Mais</button>
         </div>
         
     </div>
-    <div class="grid-item" style="background-image: url('../img/f2.jpg'); background-size: cover; background-position:center center;">
-       
+    <div class="grid-item" style="background-image: url('../img/f2.jpg'); background-size: cover; background-position:center center;">  
     </div>
+    <!-- <div class="home-mobile-img">
+        <img src="../img/f2.jpg" alt="">
+    </div> -->
      <div class="grid-item" style="background-image: url('../img/f1.jpg'); background-size: cover; background-position:center center;">
     
     </div>
@@ -62,7 +65,11 @@
     </div>
      <div class="grid-item" style="background-image: url('../img/f4.jpg'); background-size: cover; background-position:center center;">
     </div>
-    <div class="grid-item" style="background-image: url('../img/bg2.jpg'); background-size:cover; background-position:center center;">
+    <!-- <div class="home-mobile-img">
+        <img src="../img/f4.jpg" alt="">
+    </div> -->
+   
+    <div class="grid-item" style="background-image: url('../img/bg2.jpg'); background-size: cover; background-position:center center;">
         <div class="grid-texto btn-sabermais">
             <h2>Chegou O Novo Ultra Caramel Frappuccino!</h2>
             <p> 
@@ -78,7 +85,7 @@
        
     <div class="grid-item" style="background-image: url('../img/f5.jpg'); background-size: cover; background-position:center bottom;">
 
-    </div>
+</div>
     
     
 </div>
@@ -103,7 +110,8 @@
 </div>
 
 <!-- JANELAS MODAIS -->
-<div class="modal mostrar" id="modal-1">
+<div class="modal-bg" id="modal-1">
+<div class="modal" >
         <div class="modal-itens">
             <div class="modal-texto">
                 <h2>Starbucks&reg</h2>
@@ -114,7 +122,10 @@
             <button id="fechar-1" onclick="fecharModal1()">Fechar</button>
         </div> 
 </div>
-<div class="modal mostrar" id="modal-2">
+</div>
+
+<div class="modal-bg" id="modal-2">
+<div class="modal">
         <div class="modal-itens">
             <div class="modal-texto">
                 <h2>Starbucks&reg</h2>
@@ -122,10 +133,13 @@
                 Além de ser uma gigante no ramo de cafeterias, o Starbucks é reconhecido por seu compromisso com a sustentabilidade e o comércio ético de café. A empresa implementa programas e iniciativas sociais, como o C.A.F.E. Practices e o Youth Leadership Council, visando não apenas a excelência em produtos, mas também contribuir positivamente para comunidades locais.
                 </p>
             </div>
-            <button id="fechar-2" onclick="fecharModal2()">Fechar</button>
+            <button id="fechar-2" >Fechar</button>
         </div> 
 </div>
-<div class="modal mostrar" id="modal-3">
+</div>
+
+<div class="modal-bg" id="modal-3">
+<div class="modal">
         <div class="modal-itens">
             <div class="modal-texto">
                 <h2>Starbucks&reg</h2>
@@ -137,10 +151,13 @@
                 iniciativas sociais.
                 </p>
             </div>
-            <button id="fechar-3" onclick="fecharModal3()">Fechar</button>
+            <button id="fechar-3">Fechar</button>
         </div> 
 </div>
-<div class="modal mostrar" id="modal-4">
+</div>
+
+<div class="modal-bg" id="modal-4">
+<div class="modal">
         <div class="modal-itens">
             <div class="modal-texto">
                 <h2>Starbucks&reg</h2>
@@ -151,38 +168,36 @@
             <button id="fechar-4" onclick="fecharModal4()">Fechar</button>
         </div> 
 </div>
+</div>
+
 <script>
-    var modal1=document.getElementById('modal-1')
-var modal2=document.getElementById('modal-2')
-var modal3=document.getElementById('modal-3')
-var modal4=document.getElementById('modal-4')
-
-// FUNÇÕES DE ABRIR
-function abrirModal1(){
-modal1.classList.add('mostrar')
-}
-function abrirModal2(){
-    modal2.classList.add('mostrar')
-}
-function abrirModal3(){
-    modal3.classList.add('mostrar')
-}
-function abrirModal4(){
-    modal4.classList.add('mostrar')
-}
-
-// FUNÇÕES DE FECHAR
-function fecharModal1(){
-    modal1.classList.remove('mostrar')
-}
-function fecharModal2(){
-    modal2.classList.remove('mostrar')
-}
-function fecharModal3(){
-    modal3.classList.remove('mostrar')
-}
-function fecharModal4(){
-    modal4.classList.remove('mostrar')
-}
+    // Abrir e fechar janela modal 1
+    document.getElementById('abrir-1').addEventListener('click',function(){
+        document.querySelector('#modal-1').style.display='flex';
+    });
+    document.getElementById('fechar-1').addEventListener('click',function(){
+        document.querySelector('#modal-1').style.display='none';
+    });
+    // Abrir e fechar janela modal 2
+    document.getElementById('abrir-2').addEventListener('click',function(){
+        document.querySelector('#modal-2').style.display='flex';
+    });
+    document.getElementById('fechar-2').addEventListener('click',function(){
+        document.querySelector('#modal-2').style.display='none';
+    });
+     // Abrir e fechar janela modal 3
+     document.getElementById('abrir-3').addEventListener('click',function(){
+        document.querySelector('#modal-3').style.display='flex';
+    });
+    document.getElementById('fechar-3').addEventListener('click',function(){
+        document.querySelector('#modal-3').style.display='none';
+    });
+     // Abrir e fechar janela modal 4
+     document.getElementById('abrir-4').addEventListener('click',function(){
+        document.querySelector('#modal-4').style.display='flex';
+    });
+    document.getElementById('fechar-4').addEventListener('click',function(){
+        document.querySelector('#modal-4').style.display='none';
+    });
 </script>
 @endsection

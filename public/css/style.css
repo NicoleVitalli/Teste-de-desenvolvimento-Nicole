@@ -7,6 +7,10 @@
     font-family: 'Lato', sans-serif;
 
 }
+body {
+    margin: 0;
+    padding: 0;
+ }
 h1,h2{
    
     font-family: 'Roboto Condensed', sans-serif;
@@ -21,43 +25,56 @@ h2{
 
 /* estilização do menu */
 .menu{
-
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
     width: 100%;
     height: 60px;
+    margin: 0;
+    
     /* padding: ;   */
 }
-/* .logo{
-    flex: 2;
-} */
+.logo{
+    margin: 3px;
+}
 .logo img{
     height: 100%;
+    
       
+}
+.right{
+    display: flex;
 }
 .busca{
     border:solid 1px gray;
     display:flex;
-    max-width:20%;
-    margin: 1%;
+    width: 200px;
     justify-content: space-between;
     padding: 0.5rem;
-  
+    margin-right: 40px;
+    margin-top: 7px;
+    
 }
 .busca input{
     border:none;
     float:left;
     outline:none;
-    padding: 1%;  
+    padding: 2px; 
+    background-color: transparent; 
+}
+.busca button, button img{
+    border: none;
+    background: none;
+    height: 20px;
 }
 
-.btn-expandir,.busca{
+/* .btn-expandir,.busca{
     margin-left: auto;
    
-}
+} */
 .btn-expandir{
     text-align: right;
+  
     
 }
 .btn-expandir img{
@@ -78,7 +95,7 @@ nav.menu-bar{
 nav.menu-bar.expandir{
     width: 400px;
     transition: 1s;
-    z-index: 1;
+    z-index: 2;
     
 }
 .menu-bar ul{
@@ -117,8 +134,9 @@ li.item-menu a{
 }
 /* estilização do footer */
 .footer{
-    position: sticky;
-    bottom: 0 !important;
+     position: fixed;
+    bottom:0;
+    left:0;
     width: 100%;
     text-align: center;
     color:#fff;
@@ -130,12 +148,8 @@ li.item-menu a{
     display: block;
     width: 100%;
     height:700px;
-
-
-
-
+    padding: 30px;
     
-  
 }
 .texto-informativo{
         /* position:absolute;
@@ -173,6 +187,10 @@ li.item-menu a{
    cursor: pointer;
    /* transition: 0.5s; */
  }
+ /* .home-mobile-img{
+    display: none;
+ } */
+ 
 .grid-info{
     display: grid;
     grid-template-columns: repeat(2, 3fr);
@@ -215,7 +233,8 @@ li.item-menu a{
     cursor:pointer;
 }
 .grid-texto{
-    margin: 2rem;
+    margin: 20px;
+    padding: 5px;
     
 }
 .grid-item:nth-child(3){
@@ -227,9 +246,14 @@ li.item-menu a{
   
 }
 .grid-item:nth-child(7){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 80px;
     grid-row: 5/7;
-     height: 30rem;
-     grid-column:1;
+    height: 100%;
+    width: 100%;
+    grid-column:1;
    
   
 }
@@ -250,7 +274,7 @@ li.item-menu a{
 .texto-copos .texto{
     text-align: left;
     width: 400px;
-    line-height: 2.5rem;
+    line-height: 2rem;
 }
 .img-final{
     display: block;
@@ -262,32 +286,47 @@ li.item-menu a{
 .img-final img{
     height: 400px;
 }
-
-.modal{
-    display: none;
-    background-color: #006341;
+.modal-bg{
+    width: 100vw;
+    height:100vh;
+    top: 0;
+    background-color: #00000071;
     position: fixed;
-    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.modal{
+    background-color: #006341;
     height: 400px;
     width: 700px;
     padding:10px;
     margin: auto;
 
 }
-.modal .mostrar{
+.modal.mostrar{
     display: block;
 }
 .modal-itens{
     display: block;
     width: 100%;
+    text-align: center;
 }
 .modal-texto{
     text-align: left;
     color: #fff;
+    padding: 40px;
+    line-height: 2rem;
+    text-align: left;
+}
+.modal-texto p{
+    margin-top: 20px;
 }
 .modal-itens button{
     text-align: center;
     padding: 15px 40px;
+    margin-top: 20px;
     color: #fff;
     background-color: transparent;
     border: 1px solid #fff;
@@ -307,8 +346,8 @@ li.item-menu a{
     height: 70vh;
 
 }
-.form-img img{
-   width: 100%;
+.form-img{
+   width: 50%;
    height: 100%;
  
    
@@ -411,4 +450,98 @@ li.item-menu a{
     background-color: #003f29;
     transition: 0.5s;
 
+}
+/* com 1094px os botões do grid somem 
+    com 760 px de largura já tirar as imgs dos cadastros
+*/
+@media screen and (max-width: 1094px){
+    .grid-texto h2{
+        font-size: 1.5rem;
+    }
+    .grid-texto p{
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 848px){
+    .grid-texto h2{
+        font-size: 1.2rem;
+    }
+    .grid-texto p{
+        font-size: 0.8rem;
+    }
+    .texto-informativo{
+        margin: 4rem 2rem;
+
+    }
+
+}
+@media screen and (max-width: 794px){
+    .form-img{
+        display: none;
+    }
+    .bebidas-tela{
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    .texto-copos.texto{
+        color: #5f5f5f;
+    }
+    .img-final img{
+        height: 300px;
+    }
+}
+@media screen and (max-width:450px){
+    /* mudar home e cadastro */
+    body{
+        overflow-x: hidden;
+    }
+    .bebidas-tela{
+        overflow-y: hidden;
+        height: 400px;
+        padding: 15px;
+    }
+    .texto-informativo h1{
+        font-size: 3rem;
+    }
+    .bebidas-cadastradas{
+        width: 200px;
+        margin-top: 20px;
+    }
+    .bebidas-cadastradas p{
+        font-size: 0.7rem;
+    }
+    .grid-info{
+        display: block;
+    }
+    .img-final img{
+        height: 150px;
+    }
+    .texto-copos{
+       text-align: center;
+        padding-top: 20px;
+       
+    }
+    .texto-copos h2{
+        font-size: 2rem;
+    }
+    .texto-copos h2::before{
+        height: 10px;
+    }
+    .texto-copos p{
+        font-size: 0.7rem;
+        width: 300px;
+        line-height: 0.9rem;
+        text-align: left;
+    }
+    .form-header h2{
+        font-size: 1.5rem;
+    }
+    .input-box{
+        margin: 1em;
+        
+    }
+    .input-box input{
+        width: 200px;
+        display: block;
+    }
 }
