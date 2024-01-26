@@ -27,7 +27,6 @@
     </div>
     
     
-    <!-- <img src="/img/bg.jpg" alt="" srcset=""> -->
 </div>
 <div class="grid-info">
     <div class="grid-item">
@@ -41,9 +40,7 @@
     </div>
     <div class="grid-item" style="background-image: url('../img/f2.jpg'); background-size: cover; background-position:center center;">  
     </div>
-    <!-- <div class="home-mobile-img">
-        <img src="../img/f2.jpg" alt="">
-    </div> -->
+
      <div class="grid-item" style="background-image: url('../img/f1.jpg'); background-size: cover; background-position:center center;">
     
     </div>
@@ -65,11 +62,8 @@
     </div>
      <div class="grid-item" style="background-image: url('../img/f4.jpg'); background-size: cover; background-position:center center;">
     </div>
-    <!-- <div class="home-mobile-img">
-        <img src="../img/f4.jpg" alt="">
-    </div> -->
-   
-    <div class="grid-item" style="background-image: url('../img/bg2.jpg'); background-size: cover; background-position:center center;">
+
+    <div class="grid-item" style="background-image: url('../img/bg2.jpg'); background-size: cover; background-position: 10% 75%;">
         <div class="grid-texto btn-sabermais">
             <h2>Chegou O Novo Ultra Caramel Frappuccino!</h2>
             <p> 
@@ -83,14 +77,14 @@
        
     </div>
        
-    <div class="grid-item" style="background-image: url('../img/f5.jpg'); background-size: cover; background-position:center bottom;">
+    <div class="grid-item" style="background-image: url('../img/f5.jpg'); background-size: cover; background-position:left left;">
 
 </div>
     
     
 </div>
 
-<div class="texto-copos form-header" style="background-image: url('../img/bg3.jpg'); background-size: 700px; background-position:top right; background-repeat:no-repeat;">
+<div class="texto-copos" style="background-image: url('../img/bg3.jpg'); background-size: 700px; background-position:top right; background-repeat:no-repeat;">
     <h2>A Bondade Começa Com Uma Xícara </h2>
     <div class="texto btn-sabermais">
         <p>Apresentando a coleção Cups of
@@ -171,6 +165,7 @@
 </div>
 
 <script>
+     
     // Abrir e fechar janela modal 1
     document.getElementById('abrir-1').addEventListener('click',function(){
         document.querySelector('#modal-1').style.display='flex';
@@ -199,5 +194,7 @@
     document.getElementById('fechar-4').addEventListener('click',function(){
         document.querySelector('#modal-4').style.display='none';
     });
+
+    
 </script>
 @endsection

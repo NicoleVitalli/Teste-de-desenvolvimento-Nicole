@@ -1,6 +1,7 @@
 @extends('layouts.site')
 @section('titulo','Editar Bebida')
 @section('conteudo')
+<div class="mae">
 <div class="container">
 <div class="form-img" style="background-image: url('../img/editar-bg.jpg'); background-size: cover; background-position:center center;">
         
@@ -19,5 +20,6 @@
                
         </form>
         </div>
+    </div>
     </div>
 @endsection

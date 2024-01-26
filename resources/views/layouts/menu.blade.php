@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png"/>
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -64,11 +65,13 @@
     btn_exp.addEventListener('click', function() {
         // O PROBLEMA É COM A NAV BAR!!!!!!!!!!!!!!!!!
         menu_lat.classList.add('expandir');
+        
     });
 
     btn_esc.addEventListener('click', function() {
+      
         menu_lat.classList.remove('expandir');
     });
-
+   
 
 </script>

@@ -10,7 +10,12 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
  }
+    
+
 h1,h2{
    
     font-family: 'Roboto Condensed', sans-serif;
@@ -22,7 +27,13 @@ h1{
 h2{
     font-size:2em;
 }
-
+h2::before{
+    content: '';
+    display: block;
+    height:1rem;
+    width:8rem;
+    background: #006341;
+}
 /* estilização do menu */
 .menu{
     display: flex;
@@ -31,8 +42,7 @@ h2{
     width: 100%;
     height: 60px;
     margin: 0;
-    
-    /* padding: ;   */
+
 }
 .logo{
     margin: 3px;
@@ -67,11 +77,6 @@ h2{
     background: none;
     height: 20px;
 }
-
-/* .btn-expandir,.busca{
-    margin-left: auto;
-   
-} */
 .btn-expandir{
     text-align: right;
   
@@ -85,7 +90,8 @@ nav.menu-bar{
     display: block;
     position: fixed;
     right: 0;
-    width: 0px;
+    width: 400px;
+    transform:translateX(400px);
     overflow: hidden;
     height: 100%;
     background-color: #006341;
@@ -93,9 +99,10 @@ nav.menu-bar{
      
 }
 nav.menu-bar.expandir{
-    width: 400px;
+    
     transition: 1s;
     z-index: 2;
+    transform:translateX(0px);
     
 }
 .menu-bar ul{
@@ -110,11 +117,15 @@ ul, a{
   
 }
 .item-menu{
- 
+    
     width: 100%;
     text-align:center;
     height: 50px;
-     /* posiciona na metade da tela */
+    display:flex;
+    justify-content: center;
+
+ 
+ 
 
 
 }
@@ -134,26 +145,33 @@ li.item-menu a{
 }
 /* estilização do footer */
 .footer{
-     position: fixed;
+    position: absolute;
     bottom:0;
     left:0;
+    z-index: 1;
     width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    height: 60px;
     color:#fff;
     background-color:rgb(53, 53, 53);
 }
-
+.position-relative {
+    position: relative;
+}
 /* estilização da home */
 .bebidas-tela{
     display: block;
     width: 100%;
     height:700px;
     padding: 30px;
+    overflow-y: hidden;
     
 }
 .texto-informativo{
-        /* position:absolute;
-        z-index: 1; */
+       
         margin: 8rem; 
     
 }
@@ -185,12 +203,9 @@ li.item-menu a{
 .img-bebida:hover{
    opacity: 50%;
    cursor: pointer;
-   /* transition: 0.5s; */
+
  }
- /* .home-mobile-img{
-    display: none;
- } */
- 
+
 .grid-info{
     display: grid;
     grid-template-columns: repeat(2, 3fr);
@@ -202,13 +217,6 @@ li.item-menu a{
 .grid-info img{
     
     height: 100%;
-}
-.grid-texto h2::before{
-    content: '';
-    display: block;
-    height:1rem;
-    width:8rem;
-    background: #006341;
 }
 .grid-item img{
     width:100%;
@@ -233,8 +241,11 @@ li.item-menu a{
     cursor:pointer;
 }
 .grid-texto{
-    margin: 20px;
-    padding: 5px;
+    margin: 40px;
+    
+}
+.grid-texto p{
+    margin-top: 7px;
     
 }
 .grid-item:nth-child(3){
@@ -266,7 +277,7 @@ li.item-menu a{
 }
 .texto-copos{
     display: block;
-    padding: 50px;
+    padding: 80px;
     width: 100%;
     height: 500px;
     background-color:#E9EAEF;
@@ -305,9 +316,6 @@ li.item-menu a{
     margin: auto;
 
 }
-.modal.mostrar{
-    display: block;
-}
 .modal-itens{
     display: block;
     width: 100%;
@@ -321,7 +329,7 @@ li.item-menu a{
     text-align: left;
 }
 .modal-texto p{
-    margin-top: 20px;
+     margin-top: 20px;
 }
 .modal-itens button{
     text-align: center;
@@ -360,13 +368,6 @@ li.item-menu a{
 .form-header h2{
     font-size: 2.5rem;
     display: inline-block;
-}
-.form-header h2::after{
-    content: '';
-    display: block;
-    background: #006341;
-    width: 7rem;
-    height: 1rem;
 }
 .input-box{
     margin: 2em;
@@ -461,8 +462,15 @@ li.item-menu a{
     .grid-texto p{
         font-size: 0.9rem;
     }
+    .texto-copos{
+        display: block;
+        padding-top: 400px;
+        width: 100%;
+        height: 800px;
+        background-color:#E9EAEF;
+    }
 }
-@media screen and (max-width: 848px){
+/* @media screen and (max-width: 848px){
     .grid-texto h2{
         font-size: 1.2rem;
     }
@@ -474,8 +482,26 @@ li.item-menu a{
 
     }
 
-}
-@media screen and (max-width: 794px){
+} */
+@media screen and (max-width: 848px){
+    .grid-info{
+        display:block;
+    }
+    .grid-item{
+        height: 300px;
+    }
+    .grid-item:nth-child(3){
+        display: none;
+      
+    }
+    .grid-item:nth-child(4){
+        display: none;
+      
+    }
+    .grid-item:nth-child(8){
+        display: none;
+      
+    }
     .form-img{
         display: none;
     }
@@ -491,21 +517,33 @@ li.item-menu a{
     }
 }
 @media screen and (max-width:450px){
-    /* mudar home e cadastro */
+  
     body{
         overflow-x: hidden;
     }
+    /* estilização da nav bar mobile */
+    nav.menu-bar{
+        width: 300px;
+        
+    }
+    /* estilização home mobile */
     .bebidas-tela{
-        overflow-y: hidden;
-        height: 400px;
         padding: 15px;
     }
+    .texto-informativo{
+       
+        margin: 5rem 2rem; 
+    
+}
     .texto-informativo h1{
         font-size: 3rem;
     }
+    .texto-informativo p{
+        font-size: 0.8rem;
+    }
     .bebidas-cadastradas{
         width: 200px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     .bebidas-cadastradas p{
         font-size: 0.7rem;
@@ -513,25 +551,72 @@ li.item-menu a{
     .grid-info{
         display: block;
     }
+    .btn-sabermais button{
+        margin-top: 1rem;
+    
+    }
+    .grid-texto p{
+        padding-top: 5px;
+    }
+    .grid-item{
+        height: 350px;
+    }
+    .grid-item:nth-child(3){
+        display: none;
+      
+    }
+    .grid-item:nth-child(4){
+        display: none;
+      
+    }
+    .grid-item:nth-child(8){
+        display: none;
+      
+    }
+    .btn-sabermais button::selection{
+        background-color:rgb(83, 83, 83);
+        color: #fff;
+        transition: 0.3s;
+        cursor:pointer;
+    }
     .img-final img{
         height: 150px;
     }
     .texto-copos{
-       text-align: center;
-        padding-top: 20px;
+        padding-top: 500px;
+        height: 800px;
        
     }
     .texto-copos h2{
-        font-size: 2rem;
-    }
-    .texto-copos h2::before{
-        height: 10px;
+        font-size: 1.5rem;
     }
     .texto-copos p{
         font-size: 0.7rem;
+        max-width:250px;
         width: 300px;
-        line-height: 0.9rem;
-        text-align: left;
+        line-height: 1rem;
+        margin-top: 15px;
+        
+    }
+    /* estilização das janelas modais */
+    .modal{
+        height: 450px;
+        width: 300px;
+        padding: 5px;
+    
+    }
+    .modal-texto p{
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+    .modal-itens button{
+        font-size: 1rem;
+        padding: 20px 60px;
+        margin-top: 10px;
+    }
+    /* estilização cadastro mobile */
+    .container{
+        height: 50vh;
     }
     .form-header h2{
         font-size: 1.5rem;
@@ -542,6 +627,55 @@ li.item-menu a{
     }
     .input-box input{
         width: 200px;
+        height:30px;
         display: block;
     }
+
+    .btn-sabermais button{
+       height: 60px;
+       width: 200px;
+   
+        
+    }
+    .btn-enviar button{
+        border-radius: 0px;
+        padding: 17px 100px;
+    }
+    .footer{
+        display: none;
+    }
+    
+}
+@media screen and (max-height: 490px){
+    .menu-bar ul{
+        margin: 20% 0;
+     
+     
+     }
+    
+    .container{
+        margin: auto;
+        height: 460px;
+        width: 70vw;
+    }
+    .input-box input{
+        width: 350px;
+        height:50px;
+        display: block;
+    }
+  
+    .btn-sabermais button{
+        height: 60px;
+        width: 400px;
+        margin: auto 40px;
+         
+    }
+    .btn-enviar button{
+         border-radius: 0px;
+         padding: 17px 100px;
+    }
+    .footer{
+        display: none;
+    }
+  
 }

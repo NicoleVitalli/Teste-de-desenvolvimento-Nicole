@@ -11,7 +11,7 @@ class BebidaController extends Controller
     // MESMA COISA NA HOME PARA MOSTRAR OS REGISTROS!!!!
     public function bebidasHome()
     {
-        $registros=Bebida::all();
+        $registros=Bebida::take(3)->get(); 
         return view('home', compact('registros'));
     }
 
